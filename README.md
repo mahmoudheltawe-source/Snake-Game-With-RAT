@@ -7,7 +7,7 @@
 
 
 **Course:** Network Security Topics  
-**Lecturer:** Doron Ofek               
+**Lecturer:** Ofek Doron               
 **Submission Date:** 24/6/2026
 
 ## Overview
