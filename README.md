@@ -7,7 +7,7 @@
 
 
 **Course:** Network Security Topics  
-**Lecturer:** Doron Ofek 
+**Lecturer:** Doron Ofek               
 **Submission Date:** 24/6/2026
 
 ## Overview
@@ -233,9 +233,9 @@ python3 server.py
 Windows:
 ```powershell
 python snake_game.py
-
-or just opening the game
 ```
+or just opening the game
+
 
 Ubuntu:
 ```bash
