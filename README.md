@@ -8,7 +8,7 @@
 
 **Course:** Network Security Topics  
 **Lecturer:** Ofek Doron               
-**Submission Date:** 24/6/2026
+**Submission Date:** 25/6/2026
 
 ## Overview
 This project demonstrates a basic client-server architecture through a Snake game.
