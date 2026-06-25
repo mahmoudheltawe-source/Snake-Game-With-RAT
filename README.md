@@ -333,7 +333,7 @@ The Snake game opens and operates normally while the communication component run
 
 The server accepts the connection created by the Snake application's background client.(one computer)
 
-![Client Connected](Images/Client_Connected_Two_Computer.png)
+![Client Connected](Images/Client_Connected_Two_Computer_And_Command.png)
 
 The server accepts the connection created by the Snake application's background client.(two computers)
 
