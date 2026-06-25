@@ -282,6 +282,19 @@ The server and client must use the same port.
 - Close the Snake window to stop the game.
 - Press `Ctrl + C` in the server terminal to stop the server.
 
+
+## Expected Result
+
+```text
+1. The server starts listening.
+2. The Snake game starts.
+3. The client connects.
+4. The game remains responsive.
+5. Both sides exchange messages.
+6. The server displays returned results.
+```
+
+
 ## Social Engineering
 
 We created an X account to promote the Snake game as a simple and entertaining application.
@@ -298,16 +311,46 @@ Download link:
 
 [Download Snake Game](https://drive.google.com/file/d/1UVs9jzcaLOSGv_NR6qgpa6b6TJhQoIQ4/view?usp=sharing)
 
-## Expected Result
+## Project Demonstration
 
-```text
-1. The server starts listening.
-2. The Snake game starts.
-3. The client connects.
-4. The game remains responsive.
-5. Both sides exchange messages.
-6. The server displays returned results.
-```
+The following images demonstrate the main stages of the project.
+
+### Server Waiting for a Connection
+
+![Server Waiting](Images/Server_Waiting.png)
+
+The server starts listening on the selected port and waits for the Snake client to connect.
+
+### Snake Game Running
+
+![Snake Game Running](Images/Snake_Game_Running.png)
+
+The Snake game opens and operates normally while the communication component runs in the background.
+
+### Client Connected
+
+![Client Connected](Images/Client_Connected_One_Computer.png)
+
+The server accepts the connection created by the Snake application's background client.(one computer)
+
+![Client Connected](Images/Client_Connected_Two_Computer.png)
+
+The server accepts the connection created by the Snake application's background client.(two computers)
+
+### Game and Server Running Together
+
+![Game and Server](Images/Game_And_Server.png)
+
+The Snake game remains responsive while the server exchanges messages with the connected client.
+
+### Command and Response examples
+
+![Command and Response](Images/Command_And_Response1.png)
+![Command and Response](Images/Command_And_Response2.png)
+![Command and Response](Images/Command_And_Response3.png)
+![Command and Response](Images/Command_And_Response4.png)
+
+The server sends a command to the connected client and displays the returned result.
 
 ## Summary
 
