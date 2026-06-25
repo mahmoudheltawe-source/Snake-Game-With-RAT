@@ -255,6 +255,10 @@ PORT = 9999
 
 The server and client must use the same port.
 
+## Stopping the Project
+- Close the Snake window to stop the game.
+- Press `Ctrl + C` in the server terminal to stop the server.
+
 ## Social Engineering
 
 We created an X account to promote the Snake game as a simple and entertaining application.
@@ -271,9 +275,6 @@ Download link:
 
 [Download Snake Game](https://drive.google.com/file/d/1UVs9jzcaLOSGv_NR6qgpa6b6TJhQoIQ4/view?usp=sharing)
 
-## Stopping the Project
-- Close the Snake window to stop the game.
-- Press `Ctrl + C` in the server terminal to stop the server.
 
 ## Expected Result
 ```text
