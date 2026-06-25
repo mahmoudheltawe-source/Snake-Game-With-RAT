@@ -5,29 +5,35 @@
 - **Student 1:** Mahmoud Haj Yahya — 214445090
 - **Student 2:** Kareem Haj Yahya — 213442973
 
-
 **Course:** Network Security Topics  
-**Lecturer:** Ofek Doron               
+**Lecturer:** Ofek Doron       
 **Submission Date:** 25/6/2026
 
 ## Overview
+
 This project demonstrates a basic client-server architecture through a Snake game.
 
 Main files:
+
 - `server.py` — creates the server, waits for a connection, sends messages, and displays returned results.
 - `snake_game.py` — runs the Snake game and starts the client communication component in a background thread.
 
 The project is written in Python. The graphical interface uses `tkinter`, and the communication uses TCP sockets.
 
 ## Project Structure
+
 ```text
 RAT-Project/
+├── Images/
+│   ├── X_profile.png
+│   └── X_post.png
 ├── server.py
 ├── snake_game.py
 └── README.md
 ```
 
 ## Architecture
+
 ```text
 +-------------------+        TCP socket        +-------------------+
 |     server.py     | <----------------------> |   snake_game.py   |
@@ -38,7 +44,9 @@ RAT-Project/
 ```
 
 ## server.py
+
 The server side is responsible for:
+
 - Creating a TCP socket.
 - Binding to an IP address and port.
 - Listening for a client.
@@ -48,6 +56,7 @@ The server side is responsible for:
 - Closing the connection.
 
 Server flow:
+
 ```text
 Create socket -> Bind -> Listen -> Accept -> Exchange messages -> Close
 ```
@@ -55,11 +64,14 @@ Create socket -> Bind -> Listen -> Accept -> Exchange messages -> Close
 The server handles one client during each session.
 
 ## snake_game.py
+
 This file contains:
+
 1. The graphical Snake game.
 2. The client communication component.
 
 ### Game Responsibilities
+
 - Create the game window.
 - Draw the snake and food.
 - Move the snake according to keyboard input.
@@ -70,7 +82,9 @@ This file contains:
 - Restart the game.
 
 ### Snake Representation
+
 The snake is stored as a list of coordinates:
+
 ```python
 self.snake = [
     (200, 200),
@@ -82,7 +96,9 @@ self.snake = [
 The first coordinate is the head. The rest represent the body.
 
 ### Game Loop
+
 During each cycle:
+
 1. Calculate the next head position.
 2. Check collisions.
 3. Add the new head.
@@ -92,6 +108,7 @@ During each cycle:
 7. Schedule the next cycle.
 
 ### Controls
+
 ```text
 Up Arrow    -> Move up
 Down Arrow  -> Move down
@@ -102,9 +119,11 @@ Right Arrow -> Move right
 The game prevents an immediate reverse direction.
 
 ## Tkinter
+
 `Tkinter` is Python's standard library for graphical desktop interfaces.
 
 It is used for:
+
 - The main window.
 - The game canvas.
 - The score label.
@@ -113,12 +132,15 @@ It is used for:
 - Snake and food graphics.
 
 The graphical loop starts with:
+
 ```python
 root.mainloop()
 ```
 
 ## Background Thread
+
 The client communication runs in a separate thread:
+
 ```text
 Main thread       -> Snake graphical interface
 Background thread -> Server communication
@@ -127,6 +149,7 @@ Background thread -> Server communication
 This keeps the game responsive while the client waits for network messages.
 
 ## Communication Flow
+
 ```text
 1. server.py starts and waits.
 2. snake_game.py starts.
@@ -183,18 +206,8 @@ After the connection is established, it waits for messages from the server, rest
 
 This function runs in a background thread so that the Snake graphical interface remains active and responsive while network communication is taking place.
 
-
-## XOR Function
-The project uses XOR to transform messages before transmission.
-
-The same operation restores the original message:
-```text
-Original -> XOR -> Transmitted data -> XOR -> Original
-```
-
-Both sides must use the same XOR key.
-
 ## Requirements
+
 - Python 3
 - Tkinter
 - Windows or Ubuntu
@@ -204,13 +217,16 @@ Both sides must use the same XOR key.
 Tkinter is normally included with Python on Windows.
 
 Ubuntu installation:
+
 ```bash
 sudo apt update
 sudo apt install python3 python3-tk
 ```
 
 ## Running on One Computer
+
 Use the same host and port in both files:
+
 ```python
 HOST = "127.0.0.1"
 PORT = 9999
@@ -219,25 +235,29 @@ PORT = 9999
 Open two terminals in the project folder.
 
 ### Terminal 1 — Start the Server
+
 Windows:
+
 ```powershell
 python server.py
 ```
 
 Ubuntu:
+
 ```bash
 python3 server.py
 ```
 
 ### Terminal 2 — Start the Game
+
 Windows:
+
 ```powershell
 python snake_game.py
 ```
-or just opening the game
-
 
 Ubuntu:
+
 ```bash
 python3 snake_game.py
 ```
@@ -245,9 +265,11 @@ python3 snake_game.py
 The Snake window should open, and the client should connect in the background.
 
 ## Running on Two Computers
+
 Both computers must be connected to the same local network.
 
 In `snake_game.py`, replace localhost with the private IP address of the server computer:
+
 ```python
 HOST = "192.168.1.10"
 PORT = 9999
@@ -256,6 +278,7 @@ PORT = 9999
 The server and client must use the same port.
 
 ## Stopping the Project
+
 - Close the Snake window to stop the game.
 - Press `Ctrl + C` in the server terminal to stop the server.
 
@@ -275,8 +298,8 @@ Download link:
 
 [Download Snake Game](https://drive.google.com/file/d/1UVs9jzcaLOSGv_NR6qgpa6b6TJhQoIQ4/view?usp=sharing)
 
-
 ## Expected Result
+
 ```text
 1. The server starts listening.
 2. The Snake game starts.
@@ -287,6 +310,7 @@ Download link:
 ```
 
 ## Summary
+
 The project combines a graphical Snake game with TCP client-server communication.
 
 The game runs in the main thread, while the communication component runs in a background thread. This allows both parts to operate at the same time.
