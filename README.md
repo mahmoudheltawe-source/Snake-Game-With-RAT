@@ -375,6 +375,10 @@ The server sends a command to the connected client and displays the returned res
 - XOR provides only basic message transformation and is not strong encryption.
 - The implementation is designed for a controlled local environment.
 
+## Game Code
+
+The Snake game was implemented by the project members.
+
 ## Summary
 
 The project combines a graphical Snake game with TCP client-server communication.
