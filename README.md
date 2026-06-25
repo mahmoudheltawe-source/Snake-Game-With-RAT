@@ -255,6 +255,22 @@ PORT = 9999
 
 The server and client must use the same port.
 
+## Social Engineering
+
+We created an X account to promote the Snake game as a simple and entertaining application.
+
+The profile contains a post showing the gameplay and a Google Drive download link in the profile bio.
+
+The purpose of this scenario is to demonstrate how a user may trust and run an application that appears harmless.
+
+![X Profile](Images/X_profile.png)
+
+![X Post](Images/X_post.png)
+
+Download link:
+
+[Download Snake Game](https://drive.google.com/file/d/1UVs9jzcaLOSGv_NR6qgpa6b6TJhQoIQ4/view?usp=sharing)
+
 ## Stopping the Project
 - Close the Snake window to stop the game.
 - Press `Ctrl + C` in the server terminal to stop the server.
