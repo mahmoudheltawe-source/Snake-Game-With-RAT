@@ -352,6 +352,29 @@ The Snake game remains responsive while the server exchanges messages with the c
 
 The server sends a command to the connected client and displays the returned result.
 
+## Constraints and Challenges
+
+- The server handles one connected client at a time.
+- The server IP address must be configured manually in the client.
+- The client and server were tested mainly on the same local network.
+- Network and firewall settings may affect the connection.
+- The game and communication component must run simultaneously without freezing the graphical interface.
+
+## Strengths
+
+- Combines a working graphical game with client-server communication.
+- The game remains responsive while communication runs in the background.
+- Supports testing on one computer and on two computers in the same network.
+- Includes a practical Social Engineering scenario.
+- The project structure is simple and easy to demonstrate.
+
+## Weaknesses
+
+- Supports only one client at a time.
+- The server address is hard-coded and must be changed manually.
+- XOR provides only basic message transformation and is not strong encryption.
+- The implementation is designed for a controlled local environment.
+
 ## Summary
 
 The project combines a graphical Snake game with TCP client-server communication.
