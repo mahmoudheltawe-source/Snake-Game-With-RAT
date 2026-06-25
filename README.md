@@ -26,7 +26,16 @@ The project is written in Python. The graphical interface uses `tkinter`, and th
 RAT-Project/
 ├── Images/
 │   ├── X_profile.png
-│   └── X_post.png
+│   ├── X_post.png
+│   ├── Server_Waiting.png
+│   ├── Snake_Game_Running.png
+│   ├── Client_Connected_One_Computer.png
+│   ├── Client_Connected_Two_Computer_And_Command.png
+│   ├── Game_And_Server.png
+│   ├── Command_And_Response1.png
+│   ├── Command_And_Response2.png
+│   ├── Command_And_Response3.png
+│   └── Command_And_Response4.jpeg
 ├── server.py
 ├── snake_game.py
 └── README.md
@@ -348,7 +357,7 @@ The Snake game remains responsive while the server exchanges messages with the c
 ![Command and Response 1](Images/Command_And_Response1.png)
 ![Command and Response 2](Images/Command_And_Response2.png)
 ![Command and Response 3](Images/Command_And_Response3.png)
-![Command and Response 4](Images/Command_And_Response4.png)
+![Command and Response 4](Images/Command_And_Response4.jpeg)
 
 The server sends a command to the connected client and displays the returned result.
 
