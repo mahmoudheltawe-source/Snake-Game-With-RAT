@@ -174,35 +174,35 @@ This keeps the game responsive while the client waits for network messages.
 
 The following functions implement the communication between `server.py` and `snake_game.py`.
 
-### `xor_crypt()`
+### `xor_encode() `
 
-The `xor_crypt()` function is used by both the server and the client to transform messages before they are sent through the network.
+The `xor_encode() ` function is used by both the server and the client to transform messages before they are sent through the network.
 
 It applies the XOR operation using the same shared key on both sides. Because XOR is reversible, applying the function again restores the original message.
 
 ```text
-Original message -> xor_crypt() -> Transmitted data
-Transmitted data -> xor_crypt() -> Original message
+Original message -> xor_encode()  -> Transmitted data
+Transmitted data -> xor_encode()  -> Original message
 ```
 
-### `handle_client()`
+### `handle_snake_game_client()`
 
-The `handle_client()` function is implemented in `server.py`.
+The `handle_snake_game_client()` function is implemented in `server.py`.
 
-It manages the communication session with a connected client. The function receives input from the server side, transforms the message using `xor_crypt()`, sends it to the client, receives the returned response, restores the original response, and displays it in the server terminal.
+It manages the communication session with a connected client. The function receives input from the server side, transforms the message using `xor_encode() `, sends it to the client, receives the returned response, restores the original response, and displays it in the server terminal.
 
 The function continues handling messages until the connection is closed or the session ends.
 
-### `start_server()`
+### `run_server()`
 
-The `start_server()` function is implemented in `server.py`.
+The `runserver()` function is implemented in `server.py`.
 
 It creates the TCP socket, binds it to the selected host and port, starts listening for incoming connections, and accepts a client connection.
 
-After a client connects, the function passes the connected socket to `handle_client()` so that the communication session can begin.
+After a client connects, the function passes the connected socket to `handle_snake_game_client()` so that the communication session can begin.
 
 ```text
-Create socket -> Bind -> Listen -> Accept -> handle_client()
+Create socket -> Bind -> Listen -> Accept -> handle_snake_game_client()
 ```
 
 ### `connect_to_server()`
@@ -211,7 +211,7 @@ The `connect_to_server()` function is implemented in `snake_game.py`.
 
 It creates the client socket and connects the Snake application to the IP address and port used by the server.
 
-After the connection is established, it waits for messages from the server, restores them using `xor_crypt()`, processes the received request, and sends a response back to the server.
+After the connection is established, it waits for messages from the server, restores them using `xor_encode() `, processes the received request, and sends a response back to the server.
 
 This function runs in a background thread so that the Snake graphical interface remains active and responsive while network communication is taking place.
 
