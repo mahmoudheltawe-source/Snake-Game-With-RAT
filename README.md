@@ -1,14 +1,5 @@
 # Snake RAT Project
 
-## Project Members
-
-- **Student 1:** Mahmoud Haj Yahya — 214445090
-- **Student 2:** Kareem Haj Yahya — 213442973
-
-**Course:** Network Security Topics  
-**Lecturer:** Ofek Doron       
-**Submission Date:** 09/07/2026
-
 ## Overview
 
 This project demonstrates a basic client-server architecture through a Snake game.
